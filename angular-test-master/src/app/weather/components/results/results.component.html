@@ -1,0 +1,21 @@
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">City</th>
+    <th scope="col">Temperature - Next 24 hrs (Local Time)</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let cityForecast of searchResultsAsArray" data-test="city-forecast">
+    <td scope="row" data-test="city-name-cell">
+      <div data-test="city-name">{{ cityForecast[0] | titlecase }} </div>
+    </td>
+    <td scope="row" data-test="forecast-cell">
+      <ng-container *ngFor="let forecasts of cityForecast[1]">
+          <div data-test="forecast">{{ formatDt(forecasts[0]) }} - {{ forecasts[1].temp }} Celcius</div>
+      </ng-container>
+    </td>
+  </tr>
+  </tbody>
+</table>

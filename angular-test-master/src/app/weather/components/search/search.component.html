@@ -1,0 +1,13 @@
+<form class="form-inline mb-5">
+  <div class="form-group col-8 pl-0">
+    <input class="form-control mt-3 col"
+           id="city"
+           name="city"
+           placeholder="City"
+           type="text"
+           #searchTextInput
+           data-test="search-input"
+           required>
+  </div>
+  <button class="btn-search btn btn-primary mt-3 col-4" type="button" data-test="search-button" (click)="search(searchTextInput.value)">Search</button>
+</form>
